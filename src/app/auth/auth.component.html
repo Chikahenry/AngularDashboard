@@ -1,87 +1,70 @@
-<div class="row m-0" style="min-height: calc(100vh - 51px);">
+<div class="row m-0" style="height: 1100px; font-family: Nunito Sans !important; background-color: rgb(248, 248, 248)">
 
 
-  <div class="col-sm-4 left-side p-0 side-center hide-login-img">
-
-    <div class="mx-auto">
-      <img src="assets/dist/img/login-logo.png" class="mx-auto img-fluid" alt="" >
-    </div>
-
-  </div>
+  <aside class="col-md-8 " style=" background-color: black;">
 
 
-  <div class="col-xs-12 col-sm-8 p-0 mt-5">
- 
+  </aside>
+
+
+  <div class="col-md-4 p-0 mt-5">
+
 
 <!-- OLD HTML  -->
-<div class="login-page">
+<div class="mt-5 pt-5 ">
   <div class="login-box">
-      <div class="login-logo">
-        <!--<img src="assets/dist/img/login-logo.png" alt="myimage"> -->
-      </div>
-      <!-- /.login-logo -->
-      <div class="card">
-        <div class="card-body login-card-body">
-          <div style="margin-top: 0px; text-align: center;">
-            <img src="assets/dist/img/login-user-img.png" alt="myimage">
-          </div>  
-        <div class="validate-form">
-          <p class="login-box-msg bold-black"> Please login to access your portal</p>
-
+      <div class="">
+        <div class="card-body" >
+          <div class="sidenav-header ml-5 ">
+            <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute right-0 top-0 d-none d-xl-none"
+              aria-hidden="true" id="iconSidenav"></i>
+            <a class="navbar-brand m-0">
+              <span class="s-icon">
+                S
+              </span>
+              <span class="ml-3 font-weight-bolder text-lg" style="color:rgb(58, 206, 243)">Express Lands</span>
+            </a>
+          </div>
+        <div class="ml-5 mr-5">
+          <h1 class="login-box-msg pb-3 bold-black font-weight-bolder " style="font-size: 40px"> Login to <br>
+            your Account</h1>
+          <p class="pb-3 font-weight-bolder">Welcome back! Please login to your account</p>
           <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
-            
-            <div class="input-group mb-2">
-              <input type="text" class="form-control" placeholder="Email Address" formControlName="emailAddress"
-                [ngClass]="{ 'is-invalid': submitted &amp;&amp; loginForm.controls.emailAddress.errors }">
-              <div class="input-group-append">
-                <div class="input-group-text">
-                  <span class="fas fa-envelope"></span>
-                </div>
+            <div class="pb-3">
+              <div class="input-group mb-2">
+                <input type="text" class="form-control" placeholder="KTS1234567" formControlName="username"
+                  [ngClass]="{ 'is-invalid': submitted &amp;&amp; loginForm.controls.username.errors }">
+
               </div>
-            </div>
-            <div *ngIf="submitted &amp;&amp; loginForm.controls.emailAddress.errors" class="text-danger validation-error">
-              <div *ngIf="loginForm.controls.emailAddress.errors.required">Email is required</div>
-              <div *ngIf="loginForm.controls.emailAddress.errors.maxLength">Email must be under 45 characters</div>
+              <div *ngIf="submitted &amp;&amp; loginForm.controls.username.errors" class="text-danger validation-error">
+                <div *ngIf="loginForm.controls.username.errors.required">Username is required</div>
+                <div *ngIf="loginForm.controls.username.errors.maxLength">Username must be under 45 characters</div>
+              </div>
+
             </div>
 
+            <div class="pb-3">
             <div class="input-group mb-2">
-              <input [type]="fieldTextType ? 'text' : 'password'" class="form-control" placeholder="Password" formControlName="password"
+              <input [type]="fieldTextType ? 'text' : 'password'" class="form-control" placeholder="Enter Password" formControlName="password"
                 [ngClass]="{ 'is-invalid': submitted &amp;&amp; loginForm.controls.password.errors }">
-
-                <div class="input-group-append">
-                  <div class="input-group-text">
-                    <span class="fa" [ngClass]="{
-                      'fa-eye': !fieldTextType,
-                      'fa-eye-slash': fieldTextType
-                    }"
-                    (click)="toggleFieldTextType()">
-                  </span>
-                  </div>
-                </div>
 
             </div>
             <div *ngIf="submitted &amp;&amp; loginForm.controls.password.errors" class="text-danger validation-error">
               <div *ngIf="loginForm.controls.password.errors.required">Password is required</div>
+              <div *ngIf="loginForm.controls.password.errors.maxlength">Password length cannot be more than 20 characters</div>
             </div>
-
-            <div class="input-group mb-2">
-              <re-captcha (resolved)="resolved($event)" siteKey="6LcRjvUUAAAAAKKYMVWLspTMguzYHNgd8j3fahY-"></re-captcha>
             </div>
-            <div *ngIf="submitted" class="text-danger validation-error" id="captchaError">
-            </div>
-
             <div class="social-auth-links text-center mb-3">
-              <button class="btn btn-block btn button-login" id='mycaptcha'>
-                Login
+              <button class="btn btn-block btn button-login text-white mt-4" style="background-color: #122e52;">
+                LOG IN
               </button>
             </div>
           </form>
-          <div class="login-remeber text-center mb-2">
-            <label><input type="checkbox" id="check" name="check"> Remember Me |</label>
-            <a [routerLink]="['/']" style="margin-left: 5px;color: #0D47A1;">Forgot Password?</a>
+          <div class="login-remeber text-sm text-center mb-2">
+            <a [routerLink]="['/']" style="margin-left: 5px;color: rgb(58, 206, 243);" >Forgot Password?</a>
           </div>
- 
-        </div> 
+
+        </div>
 
       </div>
 
@@ -99,4 +82,5 @@
 
 
 
+</div>
 </div>

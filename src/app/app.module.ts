@@ -14,11 +14,11 @@ import { DataAndColorManagementComponent } from './data-and-color-management/dat
 
 @NgModule({
   declarations: [
-     AppComponent,
-     AuthComponent,
-     DashboardComponent,
-     DataAndColorManagementComponent
-    ],
+    AppComponent,
+    AuthComponent,
+    DashboardComponent,
+    DataAndColorManagementComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -29,7 +29,7 @@ import { DataAndColorManagementComponent } from './data-and-color-management/dat
     // NgbModule,
     // SweetAlert2Module.forRoot(),
   ],
-  providers: [],
+  providers: [DashboardComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

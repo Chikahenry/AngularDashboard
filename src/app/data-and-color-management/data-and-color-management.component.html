@@ -1,45 +1,107 @@
-<!-- <p>data-and-color-management works!</p>
-<div class="form-group col-md-4 mb-4">
-                  <label for="taxpayerId">Taxpayer ID<sup class="ml-1 font-wegiht-bold text-danger">*</sup></label>
-                  <input type="text" formControlName="taxpayerId" (keypress)="omit_special_char($event)"
-                    class="form-control" placeholder="Taxpayer ID" maxlength="11"
-                    [ngClass]="{ 'is-invalid': submitted &amp;&amp; declarationForm.controls.taxpayerId.errors }" />
-                  <div *ngIf="submitted &amp;&amp; declarationForm.controls.taxpayerId.errors" class="text-danger">
-                    <div *ngIf="declarationForm.controls.taxpayerId.errors.required">Taxpayer ID is required</div>
-                    <div *ngIf="declarationForm.controls.taxpayerId.errors.pattern">Only Alphanumeric Characters
-                      allowed</div>
+<div class="content-wrapper">
+  <div class="content-header"></div>
+
+  <!-- Main content -->
+  <section class="content" data-select2-id="32">
+    <div class="container-fluid" data-select2-id="31">
+      <!-- SELECT2 EXAMPLE -->
+      <div class="card card-secondary">
+        <div class="card-header custome">
+          <h3 class="card-title">Chart Settings</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <div class="card-body">
+            <form [formGroup]="settingsForm" class="" (ngSubmit)="onSubmit(settingsForm.value)">
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="chartId">Card </label>
+                  <select class="form-control" formControlName="chartId"
+                    [ngClass]="{ 'is-invalid': submitted &amp;&amp; settingsForm.controls.chartId.errors }">
+                    <option value="">Select Card</option>
+                    <option value="1">Play Budget </option>
+                    <option value="2">Work Budget </option>
+                    <option value="3">Card Count </option>
+                  </select>
+                </div>
+
+                <div class="form-group col-md-4">
+                  <label for="playSpent">Total Spent</label>
+                  <div class="custom-file">
+                    <input type="number" formControlName="playSpent" class="form-control"
+                      [ngClass]="{ 'is-invalid': submitted &amp;&amp; settingsForm.controls.playSpent.errors }" />
+                  </div>
+                  <div *ngIf="submitted &amp;&amp; settingsForm.controls.playSpent.errors" class="text-danger">
+
+                    <div *ngIf="settingsForm.controls.playSpent.errors.pattern">
+                      Only numbers required
+                    </div>
                   </div>
                 </div>
-                <div class="form-group col-md-4 mb-4">
-                  <label for="taxpayerId">Taxpayer ID<sup class="ml-1 font-wegiht-bold text-danger">*</sup></label>
-                  <input type="text" formControlName="taxpayerId" (keypress)="omit_special_char($event)"
-                    class="form-control" placeholder="Taxpayer ID" maxlength="11"
-                    [ngClass]="{ 'is-invalid': submitted &amp;&amp; declarationForm.controls.taxpayerId.errors }" />
-                  <div *ngIf="submitted &amp;&amp; declarationForm.controls.taxpayerId.errors" class="text-danger">
-                    <div *ngIf="declarationForm.controls.taxpayerId.errors.required">Taxpayer ID is required</div>
-                    <div *ngIf="declarationForm.controls.taxpayerId.errors.pattern">Only Alphanumeric Characters
-                      allowed</div>
+                  <div class="form-group col-md-4">
+                    <label for="playBalance">Total Balance</label>
+                    <div class="custom-file">
+                      <input type="number" formControlName="playBalance" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted &amp;&amp; settingsForm.controls.playBalance.errors }" />
+                    </div>
+                    <div *ngIf="submitted &amp;&amp; settingsForm.controls.playBalance.errors" class="text-danger">
+
+                      <div *ngIf="settingsForm.controls.playBalance.errors.pattern">
+                       Only numbers required
+                      </div>
+                    </div>
+                  </div>
+
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="playTitle">Card Title</label>
+                  <div class="custom-file">
+                    <input type="text" formControlName="playTitle" class="form-control"
+                      [ngClass]="{ 'is-invalid': submitted &amp;&amp; settingsForm.controls.playTitle.errors }" />
+                  </div>
+                  <div *ngIf="submitted &amp;&amp; settingsForm.controls.playTitle.errors" class="text-danger">
+
+                    <div *ngIf="settingsForm.controls.playTitle.errors.pattern">
+                      Only alphabets required
+                    </div>
                   </div>
                 </div>
-                <div class="form-group col-md-4 mb-4">
-                  <label for="taxpayerId">Taxpayer ID<sup class="ml-1 font-wegiht-bold text-danger">*</sup></label>
-                  <input type="text" formControlName="taxpayerId" (keypress)="omit_special_char($event)"
-                    class="form-control" placeholder="Taxpayer ID" maxlength="11"
-                    [ngClass]="{ 'is-invalid': submitted &amp;&amp; declarationForm.controls.taxpayerId.errors }" />
-                  <div *ngIf="submitted &amp;&amp; declarationForm.controls.taxpayerId.errors" class="text-danger">
-                    <div *ngIf="declarationForm.controls.taxpayerId.errors.required">Taxpayer ID is required</div>
-                    <div *ngIf="declarationForm.controls.taxpayerId.errors.pattern">Only Alphanumeric Characters
-                      allowed</div>
-                  </div>
+                <div class="form-group col-md-4">
+                  <label for="playSpentColor">Spent Color  </label>
+                  <select class="form-control"  formControlName="playSpentColor"
+                    [ngClass]="{ 'is-invalid': submitted &amp;&amp; settingsForm.controls.playSpentColor.errors }">
+                    <option value="">Select Color</option>
+                    <option  value="#0330fc">Blue </option>
+                    <option  value="#f0cc18">Yellow </option>
+                    <option  value="#def50f">Orange </option>
+                    <option value="#7b0fd9">Violet</option>
+                    <option value="#09bd2a">Green</option>
+                  </select>
                 </div>
-                <div class="form-group col-md-4 mb-4">
-                  <label for="taxpayerId">Taxpayer ID<sup class="ml-1 font-wegiht-bold text-danger">*</sup></label>
-                  <input type="text" formControlName="taxpayerId" (keypress)="omit_special_char($event)"
-                    class="form-control" placeholder="Taxpayer ID" maxlength="11"
-                    [ngClass]="{ 'is-invalid': submitted &amp;&amp; declarationForm.controls.taxpayerId.errors }" />
-                  <div *ngIf="submitted &amp;&amp; declarationForm.controls.taxpayerId.errors" class="text-danger">
-                    <div *ngIf="declarationForm.controls.taxpayerId.errors.required">Taxpayer ID is required</div>
-                    <div *ngIf="declarationForm.controls.taxpayerId.errors.pattern">Only Alphanumeric Characters
-                      allowed</div>
-                  </div>
-                </div> -->
+                <div class="form-group col-md-4">
+                  <label for="playBalanceColor">Balance Color <sup class="ml-1 font-wegiht-bold text-danger">*</sup></label>
+                  <select class="form-control" formControlName="playBalanceColor"
+                    [ngClass]="{ 'is-invalid': submitted &amp;&amp; settingsForm.controls.playBalanceColor.errors }">
+                    <option value="">Select Color</option>
+                    <option value="#0330fc">Blue</option>
+                    <option value="#f0cc18">Yellow</option>
+                    <option value="#def50f">Orange</option>
+                    <option value="#7b0fd9">Violet</option>
+                    <option value="#09bd2a">Green</option>
+
+                  </select>
+                </div>
+              </div>
+
+              <button type="submit" class="btn button-login float-left mr-5">
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
