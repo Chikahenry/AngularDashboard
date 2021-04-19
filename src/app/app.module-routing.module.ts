@@ -8,7 +8,7 @@ const routes: Routes = [
   children: [
 
   ] },
-  { path: '', component: AuthComponent },
+  { path: '/', component: AuthComponent },
 
   // { path: '**', component: PagenotfoundComponent },
 ];
