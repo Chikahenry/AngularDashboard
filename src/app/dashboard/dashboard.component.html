@@ -98,7 +98,7 @@
                     </span>
                     </span>
                     <div class="col-3   ">
-                      <div class="pt-2  text-white text-center border-radius-xl" style="background-color: #133F77; border-radius: 12px;" >
+                      <div class="pt-2  text-white text-center border-radius-xl" style="background-color: #133F77; border-radius: 12px; margin-top: -10px; margin-bottom: -40px" >
                         <i class="fas fa-power-off" ></i><p class=" pb-1" style="font-size: 11px;">Log out</p>
                       </div>
                     </div>
@@ -1382,6 +1382,7 @@
                 <p class=""style="font-size: 11px">Summary</p>
               </div>
               <div id="play">
+                <p class="font-weight-bolder label" >{{playLabel| uppercase}}</p>
                 <canvas class="canvas text-center mb-4 " style="margin-top: -65px;" id="playBudget"></canvas>
 
               </div>
@@ -1437,8 +1438,10 @@
                 </div>
                 <p class=" "style="font-size: 11px">Summary</p>
               </div>
+              <div id="work">
+                <p class="font-weight-bolder">{{workLabel | uppercase}}</p>
                 <canvas id="workBudget"class="canvas text-center  mb-4" style="margin-top: -65px;" ></canvas>
-              <!-- </div> -->
+              </div>
               <div class="card p-3" style="font-size: 11px; background-color: #fff7f5 !important; margin-top: -50px;">
                 <div class="row">
                   <div class="col-md-6">
@@ -1485,9 +1488,10 @@
                 </div>
 
                 </div>
-                <div class=" ">
+                <div id="count">
+                  <p class="font-weight-bolder">{{cardLabel| uppercase}}</p>
                   <canvas id="cardCount" class="canvas text-center mb-4" style="margin-top: -55px;"></canvas>
-                <!-- </div> -->
+                </div>
                 <div class="card p-3 text-white" style="font-size: 11px; background-color: #0e94afd6 !important; margin-top: -45px !important;">
                   <div class="row">
                     <div class="col-md-6">
@@ -1534,7 +1538,6 @@
           </div>
         </div>
       </footer>
-    </div>
   </main>
   <div class="fixed-plugin" >
     <a class="fixed-plugin-button text-dark position-fixed px-3 py-2" (click)="viewSettings(settings)">

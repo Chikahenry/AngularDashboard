@@ -79,11 +79,32 @@ export class DashboardComponent implements OnInit {
       this.cardInactive = this.apidata[2].active;
       this.notification = data[0].notification_count;
       this.user = data[0].logged_user;
-      this.getChart(this.playSpent, this.playBalance, '#1B5BAC', '#78C2ED', 1);
+      this.getChart(
+        this.playSpent,
+        this.playBalance,
+        '#1B5BAC',
+        '#78C2ED',
+        1,
+        'CAPEX'
+      );
 
-      this.getChart(this.workSpent, this.workBalance, '#ff6542', '#eedfd8', 2);
+      this.getChart(
+        this.workSpent,
+        this.workBalance,
+        '#ff6542',
+        '#eedfd8',
+        2,
+        'OPEX'
+      );
 
-      this.getChart(this.cardInuse, this.cardInactive, '#f6ae2d', '#eeeae4', 3);
+      this.getChart(
+        this.cardInuse,
+        this.cardInactive,
+        '#f6ae2d',
+        '#eeeae4',
+        3,
+        'ASSETS'
+      );
     });
   }
 
@@ -91,8 +112,16 @@ export class DashboardComponent implements OnInit {
     this.showModal(modal);
   }
 
-  public getChart(value1: any, value2: any, color1: any, color2: any, id) {
+  public getChart(
+    value1: any,
+    value2: any,
+    color1: any,
+    color2: any,
+    id,
+    label: any
+  ) {
     if (id == 1) {
+      this.playLabel = label;
       this.playSpent = value1;
       this.playBalance = value2;
       this.playColor1 = color1;
@@ -116,8 +145,8 @@ export class DashboardComponent implements OnInit {
         options: {
           circumference: 117 * Math.PI,
           rotation: 172 * Math.PI,
-          cutout: 125,
-          radius: 100,
+          cutout: 115,
+          radius: 85,
           elements: {
             arc: 34,
           },
@@ -125,6 +154,7 @@ export class DashboardComponent implements OnInit {
         },
       });
     } else if (id == 2) {
+      this.workLabel = label;
       this.workSpent = value1;
       this.workBalance = value2;
       this.workColor1 = color1;
@@ -147,8 +177,8 @@ export class DashboardComponent implements OnInit {
         options: {
           circumference: 117 * Math.PI,
           rotation: 172 * Math.PI,
-          cutout: 125,
-          radius: 100,
+          cutout: 115,
+          radius: 85,
           elements: {
             arc: 34,
           },
@@ -156,6 +186,7 @@ export class DashboardComponent implements OnInit {
         },
       });
     } else {
+      this.cardLabel = label;
       this.cardInuse = value1;
       this.cardInactive = value2;
       this.countColor1 = color1;
@@ -178,8 +209,8 @@ export class DashboardComponent implements OnInit {
         options: {
           circumference: 117 * Math.PI,
           rotation: 172 * Math.PI,
-          cutout: 125,
-          radius: 100,
+          cutout: 115,
+          radius: 85,
           elements: {
             arc: 34,
           },

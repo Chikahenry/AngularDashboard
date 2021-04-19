@@ -40,7 +40,7 @@ export class DataAndColorManagementComponent implements OnInit {
 
     const obj = {
       id: formAllData.chartId,
-      titlt: formAllData.playTitle,
+      title: formAllData.playTitle,
       value1: formAllData.playSpent,
       value2: formAllData.playBalance,
       color1: formAllData.playSpentColor,
@@ -51,7 +51,8 @@ export class DataAndColorManagementComponent implements OnInit {
       obj.value2,
       obj.color1,
       obj.color2,
-      obj.id
+      obj.id,
+      obj.title
     );
   }
 }
