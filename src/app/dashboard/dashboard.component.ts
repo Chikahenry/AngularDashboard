@@ -116,7 +116,7 @@ export class DashboardComponent implements OnInit {
         options: {
           circumference: 117 * Math.PI,
           rotation: 172 * Math.PI,
-          cutout: 138,
+          cutout: 125,
           radius: 100,
           elements: {
             arc: 34,
@@ -147,7 +147,7 @@ export class DashboardComponent implements OnInit {
         options: {
           circumference: 117 * Math.PI,
           rotation: 172 * Math.PI,
-          cutout: 138,
+          cutout: 125,
           radius: 100,
           elements: {
             arc: 34,
@@ -178,7 +178,7 @@ export class DashboardComponent implements OnInit {
         options: {
           circumference: 117 * Math.PI,
           rotation: 172 * Math.PI,
-          cutout: 138,
+          cutout: 125,
           radius: 100,
           elements: {
             arc: 34,
