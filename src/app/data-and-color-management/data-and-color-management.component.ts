@@ -21,12 +21,12 @@ export class DataAndColorManagementComponent implements OnInit {
   ngOnInit(): void {
     this.settingsForm = this.formBuilder.group({
       card: [''],
-      chartId: [''],
-      playTitle: [''],
-      playSpent: [''],
-      playBalance: [''],
-      playSpentColor: [''],
-      playBalanceColor: [''],
+      chartId: ['', Validators.required],
+      playTitle: ['', Validators.required],
+      playSpent: ['', Validators.required],
+      playBalance: ['', Validators.required],
+      playSpentColor: ['', Validators.required],
+      playBalanceColor: ['', Validators.required],
     });
   }
 

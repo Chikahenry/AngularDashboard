@@ -23,31 +23,37 @@
                     <option value="2">Work Budget </option>
                     <option value="3">Card Count </option>
                   </select>
+                  <div *ngIf="submitted &amp;&amp; settingsForm.controls.chartId.errors" class="text-danger">
+
+                    <div *ngIf="settingsForm.controls.chartId.errors.required">
+                      This is required
+                    </div>
+                  </div>
                 </div>
 
                 <div class="form-group col-md-4">
-                  <label for="playSpent">Total Spent</label>
+                  <label for="playSpent">Total Spent/In-use</label>
                   <div class="custom-file">
                     <input type="number" formControlName="playSpent" class="form-control"
                       [ngClass]="{ 'is-invalid': submitted &amp;&amp; settingsForm.controls.playSpent.errors }" />
                   </div>
                   <div *ngIf="submitted &amp;&amp; settingsForm.controls.playSpent.errors" class="text-danger">
 
-                    <div *ngIf="settingsForm.controls.playSpent.errors.pattern">
-                      Only numbers required
+                    <div *ngIf="settingsForm.controls.playSpent.errors.required">
+                      This is required
                     </div>
                   </div>
                 </div>
                   <div class="form-group col-md-4">
-                    <label for="playBalance">Total Balance</label>
+                    <label for="playBalance">Total Balance/Inactive</label>
                     <div class="custom-file">
                       <input type="number" formControlName="playBalance" class="form-control"
                         [ngClass]="{ 'is-invalid': submitted &amp;&amp; settingsForm.controls.playBalance.errors }" />
                     </div>
                     <div *ngIf="submitted &amp;&amp; settingsForm.controls.playBalance.errors" class="text-danger">
 
-                      <div *ngIf="settingsForm.controls.playBalance.errors.pattern">
-                       Only numbers required
+                      <div *ngIf="settingsForm.controls.playBalance.errors.required">
+                       This is required
                       </div>
                     </div>
                   </div>
@@ -58,13 +64,16 @@
                 <div class="form-group col-md-4">
                   <label for="playTitle">Card Title</label>
                   <div class="custom-file">
-                    <input type="text" formControlName="playTitle" class="form-control"
+                    <input type="text" maxlength="10" formControlName="playTitle" class="form-control"
                       [ngClass]="{ 'is-invalid': submitted &amp;&amp; settingsForm.controls.playTitle.errors }" />
                   </div>
                   <div *ngIf="submitted &amp;&amp; settingsForm.controls.playTitle.errors" class="text-danger">
 
                     <div *ngIf="settingsForm.controls.playTitle.errors.pattern">
                       Only alphabets required
+                    </div>
+                    <div *ngIf="settingsForm.controls.playTitle.errors.required">
+                      Card Title is required
                     </div>
                   </div>
                 </div>
@@ -79,6 +88,12 @@
                     <option value="#7b0fd9">Violet</option>
                     <option value="#09bd2a">Green</option>
                   </select>
+                  <div *ngIf="submitted &amp;&amp; settingsForm.controls.playSpentColor.errors" class="text-danger">
+
+                    <div *ngIf="settingsForm.controls.playSpentColor.errors.required">
+                      This is required
+                    </div>
+                  </div>
                 </div>
                 <div class="form-group col-md-4">
                   <label for="playBalanceColor">Balance Color <sup class="ml-1 font-wegiht-bold text-danger">*</sup></label>
@@ -90,8 +105,13 @@
                     <option value="#def50f">Orange</option>
                     <option value="#7b0fd9">Violet</option>
                     <option value="#09bd2a">Green</option>
-
                   </select>
+                  <div *ngIf="submitted &amp;&amp; settingsForm.controls.playBalanceColor.errors" class="text-danger">
+
+                    <div *ngIf="settingsForm.controls.playBalanceColor.errors.required">
+                      This is required
+                    </div>
+                  </div>
                 </div>
               </div>
 

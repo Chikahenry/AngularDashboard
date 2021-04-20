@@ -1,5 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, ElementRef, OnInit } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  OnInit,
+} from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import {
   ModalDismissReasons,
@@ -43,7 +48,8 @@ export class DashboardComponent implements OnInit {
   constructor(
     private httpClient: HttpClient,
     private formBuilder: FormBuilder,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private cd: ChangeDetectorRef
   ) {}
 
   ngOnInit() {
@@ -126,7 +132,7 @@ export class DashboardComponent implements OnInit {
       this.playBalance = value2;
       this.playColor1 = color1;
       this.playColor2 = color2;
-
+      this.cd.detectChanges();
       var myChart = new Chart(document.getElementById('playBudget'), {
         type: 'doughnut',
         data: {
